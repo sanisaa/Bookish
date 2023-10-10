@@ -1,4 +1,5 @@
-﻿namespace BookStore.Repositories.Abstract
+﻿//hello
+namespace BookStore.Repositories.Abstract
 {
     public interface IAuthorService
     {
