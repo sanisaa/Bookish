@@ -3,6 +3,7 @@ using BookStore.Models.Domain;
 using BookStore.Repositories.Abstract;
 using BookStore.Repositories.Implementation;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +13,9 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
 
 builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped<IPublisherService, PublisherService>();
+builder.Services.AddScoped<IBookService, BookService>();
 
 var app = builder.Build();
 
